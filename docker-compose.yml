@@ -1,0 +1,17 @@
+version: '2'
+services:
+  collectd:
+    image: oisis/collectd
+    container_name: collectd
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/etc/hostname:/mnt/hostname:ro'
+      - '/proc:/mnt/proc:ro'
+      - '/etc:/mnt/etc:ro'
+    environment:
+      - HOST_NAME=test.host
+      - OPENTSDB_ADDR=opentsdb
+      - OPENTSDB_PORT=4242
+    links:
+      - opentsdb
