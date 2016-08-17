@@ -6,9 +6,9 @@ elif [[ $INFLUXDB_PORT_25826_UDP_ADDR && ${INFLUXDB_PORT_25826_UDP_ADDR-x} ]]; t
     envtpl /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
 fi
 
-if [[ $OPENTSDB_SERVER_ADDR && ${OPENTSDB_SERVER_ADDR-x} ]]; then
+if [[ $OPENTSDB_ADDR && ${OPENTSDB_ADDR-x} ]]; then
     envtpl /etc/collectd/collectd.conf.d/tsdb.conf.tpl
-elif [[ $OPENTSDB_SERVER_PORT && ${OPENTSDB_SERVER_PORT-x} ]]; then
+elif [[ $OPENTSDB_PORT && ${OPENTSDB_PORT-x} ]]; then
     envtpl /etc/collectd/collectd.conf.d/tsdb.conf.tpl
 fi
 
