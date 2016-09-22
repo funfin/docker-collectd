@@ -56,3 +56,5 @@ docker run -d --link opentsdb:opentsdb \
 - `INFLUXDB_PORT`: InfluxDB host port (default 8086)
 - `OPENTSDB_HOST`: OpenTSDB host address(default localhost)
 - `OPENTSDB_PORT`: OpenTSDB host port (default 4242)
+- `LOGSTASH_HOST`: Logstash host address(default localhost)
+- `LOGSTASH_PORT`: Logstash host port (default 25826)
