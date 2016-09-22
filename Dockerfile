@@ -29,6 +29,7 @@ COPY plugins-conf /etc/collectd/plugins.conf.d
 ADD config/collectd.conf.tpl /etc/collectd/collectd.conf.tpl
 ADD config/write_graphite.conf.tpl /etc/collectd/collectd.conf.d/write_graphite.conf.tpl
 ADD config/write_influxdb.conf.tpl /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
+ADD config/write_logstash.conf.tpl /etc/collectd/collectd.conf.d/write_logstash.conf.tpl
 ADD config/tsdb.conf.tpl /etc/collectd/collectd.conf.d/tsdb.conf.tpl
 ADD config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD scripts/run.sh /root/run.sh
