@@ -1,6 +1,6 @@
 Hostname "{{ HOST_NAME | default(HOSTNAME) }}"
 FQDNLookup false
-Interval 10
+Interval "{{ RUN_INTERVAL | default(10) }}"
 Timeout 2
 ReadThreads 10
 WriteThreads 10

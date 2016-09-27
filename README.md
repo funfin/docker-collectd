@@ -50,6 +50,7 @@ docker run -d --link opentsdb:opentsdb \
 ### Supported variables:
 
 - `HOST_NAME`: Host name
+- `RUN_INTERVAL`: How often to run plugins
 - `GRAPHITE_HOST`: Graphite host address(default localhost)
 - `GRAPHITE_PORT`: Graphite host port (default 2003)
 - `INFLUXDB_HOST`: InfluxDB host address(default localhost)
