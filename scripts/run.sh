@@ -4,6 +4,11 @@ if [[ $GRAPHITE_HOST && ${GRAPHITE_HOST-x} ]] || [[ $GRAPHITE_PORT && ${GRAPHITE
     envtpl /etc/collectd/collectd.conf.d/write_graphite.conf.tpl
 fi
 
+
+if [[ $HOST_NAME && ${HOST_NAME-x} ]]; then
+    envtpl /etc/collectd/collectd.conf.tpl
+fi
+
 if [[ $INFLUXDB_HOST && ${INFLUXDB_HOST-x} ]] || [[ $INFLUXDB_PORT && ${INFLUXDB_PORT-x} ]]; then
     envtpl /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
 fi
