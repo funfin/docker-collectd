@@ -17,7 +17,7 @@ for [Docker](https://www.docker.com/)'s.
 
 3. Alternatively build an image from [Dockerfile](https://github.com/oisis/docker-collectd):
 
-```docker build oisis/collectd .```
+```docker build -t oisis/collectd .```
 
 ### Usage
 
