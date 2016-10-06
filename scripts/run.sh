@@ -1,5 +1,6 @@
 #!/bin/bash
 
+HOSTNAME=`cat /etc/hostname`
 
 if [[ $GRAPHITE_HOST && ${GRAPHITE_HOST-x} ]] || [[ $GRAPHITE_PORT && ${GRAPHITE_PORT-x} ]]; then
     envtpl /etc/collectd/collectd.conf.d/write_graphite.conf.tpl
