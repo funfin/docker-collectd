@@ -11,8 +11,8 @@ ENV INITRD No
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
 
 RUN apt-get update \
-  && apt-get install -yqq collectd -t jessie-backports
-RUN apt-get install -yqq \
+  && apt-get install -yqq collectd -t jessie-backports \
+  && apt-get install -yqq \
   supervisor python-pip \
   && pip install envtpl \
   && apt-get clean \
@@ -26,13 +26,13 @@ RUN apt-get install -yqq \
 
 RUN mkdir -p /etc/collectd/plugins.conf.d
 COPY plugins-conf /etc/collectd/plugins.conf.d
-ADD config/collectd.conf.tpl /etc/collectd/collectd.conf.tpl
-ADD config/write_graphite.conf.tpl /etc/collectd/collectd.conf.d/write_graphite.conf.tpl
-ADD config/write_influxdb.conf.tpl /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
-ADD config/write_logstash.conf.tpl /etc/collectd/collectd.conf.d/write_logstash.conf.tpl
-ADD config/tsdb.conf.tpl /etc/collectd/collectd.conf.d/tsdb.conf.tpl
-ADD config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD scripts/run.sh /root/run.sh
+COPY config/collectd.conf.tpl /etc/collectd/collectd.conf.tpl
+COPY config/write_graphite.conf.tpl /etc/collectd/collectd.conf.d/write_graphite.conf.tpl
+COPY config/write_influxdb.conf.tpl /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
+COPY config/write_logstash.conf.tpl /etc/collectd/collectd.conf.d/write_logstash.conf.tpl
+COPY config/tsdb.conf.tpl /etc/collectd/collectd.conf.d/tsdb.conf.tpl
+COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY scripts/run.sh /root/run.sh
 RUN chmod +x /root/run.sh
 
 CMD ["/root/run.sh"]
