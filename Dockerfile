@@ -35,4 +35,4 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY scripts/run.sh /root/run.sh
 RUN chmod +x /root/run.sh
 
-CMD ["/root/run.sh"]
+ENTRYPOINT ["/root/run.sh"]
