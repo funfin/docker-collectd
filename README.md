@@ -27,7 +27,7 @@ In addition with puckel/docker-graphite or tutum/influxdb, a basic collectd-base
 ```
 docker run -d --link graphite:graphite \
   --name collectd -e HOST_NAME=YOURHOSTNAME \
-  -e GRAPHITE_ADDR=127.0.0.1 -e GRAPHITE_PORT=2003 \
+  -e GRAPHITE_HOST=127.0.0.1 -e GRAPHITE_PORT=2003 \
   oisis/collectd
 ```
 
@@ -35,7 +35,7 @@ docker run -d --link graphite:graphite \
 ```
 docker run -d --link influxdb:influxdb \
   --name collectd -e HOST_NAME=YOURHOSTNAME \
-  -e INFLUXDB_ADDR=127.0.0.1 -e INFLUXDB_PORT=8086 \
+  -e INFLUXDB_HOST=127.0.0.1 -e INFLUXDB_PORT=8086 \
   oisis/collectd
 ```
 
@@ -43,7 +43,7 @@ Run with OpenTSDB support:
 ```
 docker run -d --link opentsdb:opentsdb \
   --name collectd -e HOST_NAME=YOURHOSTNAME \
-  -e OPENTSDB_ADDR=opentsdb -e OPENTSDB_PORT=4242 \
+  -e OPENTSDB_HOST=opentsdb -e OPENTSDB_PORT=4242 \
   oisis/collectd
 ```
 
