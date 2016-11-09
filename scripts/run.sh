@@ -10,7 +10,7 @@ if [[ $INFLUXDB_HOST && ${INFLUXDB_HOST-x} ]] || [[ $INFLUXDB_PORT && ${INFLUXDB
     envtpl --keep-template /etc/collectd/collectd.conf.d/write_influxdb.conf.tpl
 fi
 
-if [[ $OPENTSDB_ADDR && ${OPENTSDB_ADDR-x} ]] || [[ $OPENTSDB_PORT && ${OPENTSDB_PORT-x} ]]; then
+if [[ $OPENTSDB_ADDR && ${OPENTSDB_HOST-x} ]] || [[ $OPENTSDB_PORT && ${OPENTSDB_PORT-x} ]]; then
     envtpl --keep-template /etc/collectd/collectd.conf.d/tsdb.conf.tpl
 fi
 
